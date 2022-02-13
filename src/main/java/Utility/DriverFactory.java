@@ -14,13 +14,13 @@ public class DriverFactory {
 
         browser = PropertiesFile.getProperty("browser");
         if( browser.equals("chrome")) {
-            System.setProperty("webdriver.chrome.driver", driverPath + "chromedriver");
+            System.setProperty("webdriver.chrome.driver", driverPath + "chromedriver.exe");
             driver = new ChromeDriver();
         } else if(browser.equals("firefox")) {
-            System.setProperty("webdriver.gecko.driver", driverPath + "geckodriver");
+            System.setProperty("webdriver.gecko.driver", driverPath + "geckodriver.exe");
             driver = new FirefoxDriver();
         } else if(browser.equals("edge")) {
-            System.setProperty("webdriver.edge.driver", driverPath + "msedgedriver");
+            System.setProperty("webdriver.edge.driver", driverPath + "msedgedriver.exe");
             driver = new EdgeDriver();
         }
         return driver;
