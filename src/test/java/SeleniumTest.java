@@ -1,4 +1,4 @@
-import static org.junit.Assert.assertEquals;
+import org.junit.Assert;
 import Utility.DriverFactory;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -15,7 +15,7 @@ public class SeleniumTest {
         driver.navigate().to(url);
         WebElement searchInput = driver.findElement(By.className("gLFyf"));
         searchInput.sendKeys("Selenium", Keys.ENTER);
-        assertEquals("Selenium - Buscar con Google", driver.getTitle());
+        Assert.assertEquals("Selenium - Buscar con Google", driver.getTitle());
         driver.quit();
     }
 }
