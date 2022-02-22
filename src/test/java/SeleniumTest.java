@@ -12,6 +12,7 @@ public class SeleniumTest {
 
     @Test
     public void NavigateToGoogle() {
+        driver.manage().window().maximize();
         driver.navigate().to(url);
         WebElement searchInput = driver.findElement(By.className("gLFyf"));
         searchInput.sendKeys("Selenium", Keys.ENTER);
