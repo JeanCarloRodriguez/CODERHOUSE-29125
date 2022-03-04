@@ -23,6 +23,8 @@ public class DriverFactory {
             System.setProperty("webdriver.edge.driver", driverPath + "msedgedriver.exe");
             driver = new EdgeDriver();
         }
+        // Implicit wait
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         return driver;
     }
 }
