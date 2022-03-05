@@ -1,5 +1,6 @@
 package Utility;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -8,20 +9,19 @@ import java.util.concurrent.TimeUnit;
 
 public class DriverFactory {
     public static WebDriver driver;
-    public static String driverPath = "./src/main/resources/drivers/";
     private static String browser;
 
     public static WebDriver getDriver() {
 
         browser = PropertiesFile.getProperty("browser");
         if( browser.equals("chrome")) {
-            System.setProperty("webdriver.chrome.driver", driverPath + "chromedriver.exe");
+            WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
         } else if(browser.equals("firefox")) {
-            System.setProperty("webdriver.gecko.driver", driverPath + "geckodriver.exe");
+            WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
         } else if(browser.equals("edge")) {
-            System.setProperty("webdriver.edge.driver", driverPath + "msedgedriver.exe");
+            WebDriverManager.edgedriver().setup();
             driver = new EdgeDriver();
         }
         // Implicit wait
