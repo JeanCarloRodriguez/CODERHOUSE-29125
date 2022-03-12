@@ -1,6 +1,6 @@
 import Utility.DriverFactory;
-import org.junit.Test;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
 import pages.IndexPage;
 import pages.SignUpPage;
 
