@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
+    <listeners>
+        <listener class-name="Utility.Listener"></listener>
+    </listeners>
     <test verbose="2" preserve-order="true" name="C:/Users/aleja/Documents/CoderHouse/CODERHOUSE-29125" parallel="methods">
         <parameter name="username" value="CoderUser"/>
         <classes>
-            <class name="Parametros"/>
-            <class name="PruebasEnParalelo"/>
+            <class name="DataProviderTest"/>
         </classes>
+        <groups>
+            <run>
+                <exclude name="Facebook"></exclude>
+            </run>
+        </groups>
     </test>
 </suite>
